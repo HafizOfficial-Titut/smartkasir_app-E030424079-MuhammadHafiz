@@ -19,6 +19,7 @@ class _ProfilTokoPageState extends State<ProfilTokoPage> {
   final _alamatController = TextEditingController();
   final _noWaController = TextEditingController();
   final _footerController = TextEditingController();
+  final _igController = TextEditingController();
 
   // Status visual tombol simpan
   bool _sedangMenyimpan = false;
@@ -38,6 +39,7 @@ class _ProfilTokoPageState extends State<ProfilTokoPage> {
     _alamatController.dispose();
     _noWaController.dispose();
     _footerController.dispose();
+    _igController.dispose();
     super.dispose();
   }
 
@@ -50,6 +52,7 @@ class _ProfilTokoPageState extends State<ProfilTokoPage> {
       _noWaController.text = prefs.getString('no_wa') ?? '081234567890';
       _footerController.text = prefs.getString('footer_struk') ?? 'Terima Kasih Atas Kunjungan Anda! Barang yang sudah dibeli tidak dapat ditukar.';
       _activeCashierName = prefs.getString('active_cashier_name') ?? 'Belum Ditentukan';
+      _igController.text = prefs.getString('ig_toko') ?? '@smartkasir.id';
     });
   }
 
@@ -61,6 +64,7 @@ class _ProfilTokoPageState extends State<ProfilTokoPage> {
     await prefs.setString('alamat_toko', _alamatController.text.trim());
     await prefs.setString('no_wa', _noWaController.text.trim());
     await prefs.setString('footer_struk', _footerController.text.trim());
+    await prefs.setString('ig_toko', _igController.text.trim());
     setState(() => _sedangMenyimpan = false);
 
     if (!mounted) return;
@@ -184,6 +188,20 @@ class _ProfilTokoPageState extends State<ProfilTokoPage> {
                 labelText: 'Catatan Kaki Struk (Footer Nota)',
                 hintText: 'Contoh: Terima kasih atas kunjungan Anda!',
                 prefixIcon: const Icon(Icons.receipt_outlined),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                filled: true,
+                fillColor: Colors.white,
+              ),
+            ),
+            const SizedBox(height: 14),
+
+            // 5. BIDANG MEDIA SOSIAL / INSTAGRAM TOKO
+            TextFormField(
+              controller: _igController,
+              decoration: InputDecoration(
+                labelText: 'Akun Instagram Toko (@nama_toko)',
+                hintText: 'Contoh: @smartkasir.id',
+                prefixIcon: const Icon(Icons.camera_alt_outlined),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                 filled: true,
                 fillColor: Colors.white,
