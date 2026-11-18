@@ -31,7 +31,7 @@ class _FormProdukPageState extends State<FormProdukPage> {
 
   // Variabel kategori terpilih
   String _kategoriTerpilih = 'Makanan';
-  final List<String> _kategoriList = ['Makanan', 'Minuman', 'Snack', 'Lainnya'];
+  final List<String> _kategoriList = ['Makanan', 'Minuman', 'Snack', 'Dessert'];
 
   // Status proses simpan
   bool _sedangMenyimpan = false;
@@ -311,7 +311,7 @@ class _FormProdukPageState extends State<FormProdukPage> {
                       ),
                       validator: (val) {
                         final d = int.tryParse(val ?? '0') ?? 0;
-                        if (d < 0 || d > 100) return '0 - 100%';
+                        if (d < 0 || d > 50) return 'Diskon maksimal 50%';
                         return null;
                       },
                     ),

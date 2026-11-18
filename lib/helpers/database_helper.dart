@@ -90,7 +90,7 @@ class DatabaseHelper {
   Future<List<Produk>> getAllProduk() async {
     final db = await instance.database;
     // Mengeksekusi kueri SELECT * FROM produk ORDER BY id DESC (Urutan produk terbaru di atas)
-    final result = await db.query('produk', orderBy: 'id DESC');
+    final result = await db.query('produk', orderBy: 'harga_jual ASC');
     // Mengonversi List of Map menjadi List of Produk menggunakan perulangan .map()
     return result.map((json) => Produk.fromMap(json)).toList();
   }
@@ -107,7 +107,7 @@ class DatabaseHelper {
       'produk',
       where: 'kategori = ?', // Klausa kondisi penyaringan
       whereArgs: [kategori], // Argumen nilai parameter yang disubstitusikan ke '?'
-      orderBy: 'id DESC',
+      orderBy: 'harga_jual ASC',
     );
     return result.map((json) => Produk.fromMap(json)).toList();
   }
@@ -120,7 +120,7 @@ class DatabaseHelper {
       'produk',
       where: 'nama_produk LIKE ?',
       whereArgs: ['%$keyword%'], // Wildcard '%' mencocokkan kata di awal, tengah, atau akhir
-      orderBy: 'id DESC',
+      orderBy: 'harga_jual ASC',
     );
     return result.map((json) => Produk.fromMap(json)).toList();
   }
