@@ -1,7 +1,7 @@
 // Mengimpor pustaka antarmuka Material Design utama dari framework Flutter
 import 'package:flutter/material.dart';
-// [PERUBAHAN TAHAP 7.4]: Ganti impor dashboard dengan halaman navigasi utama 4 menu
-import 'pages/main_navigation_page.dart';
+// [PERUBAHAN TAHAP 7.5]: Tambahkan impor halaman Splash Screen
+import 'pages/splash_screen_page.dart';
 
 // Fungsi utama (entry point) aplikasi
 void main() {
@@ -30,8 +30,8 @@ class SmartKasirApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
-      // [PERUBAHAN TAHAP 7.4]: Arahkan properti home ke MainNavigationPage()
-      home: const MainNavigationPage(),
+      // [PERUBAHAN TAHAP 7.5]: Titik awal aplikasi dibuka pertama kali melalui SplashScreenPage()
+      home: const SplashScreenPage(),
     );
   }
 }
