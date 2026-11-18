@@ -1,9 +1,9 @@
 // Mengimpor pustaka antarmuka Material Design utama dari framework Flutter
 import 'package:flutter/material.dart';
-// [PERUBAHAN TAHAP 7.3]: Mengimpor berkas halaman DashboardPage dari folder pages
-import 'pages/dashboard_page.dart';
+// [PERUBAHAN TAHAP 7.4]: Ganti impor dashboard dengan halaman navigasi utama 4 menu
+import 'pages/main_navigation_page.dart';
 
-// Fungsi utama (entry point) tempat pertama kali aplikasi dijalankan
+// Fungsi utama (entry point) aplikasi
 void main() {
   runApp(const SmartKasirApp());
 }
@@ -20,7 +20,7 @@ class SmartKasirApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF1E3A8A), // Biru Navy Kasir Profesional
+          seedColor: const Color(0xFF1E3A8A), // Biru Navy Profesional Bisnis
           brightness: Brightness.light,
         ),
         appBarTheme: const AppBarTheme(
@@ -30,8 +30,8 @@ class SmartKasirApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
-      // [PERUBAHAN TAHAP 7.3]: Mengarahkan properti home langsung ke halaman DashboardPage()
-      home: const DashboardPage(),
+      // [PERUBAHAN TAHAP 7.4]: Arahkan properti home ke MainNavigationPage()
+      home: const MainNavigationPage(),
     );
   }
 }
