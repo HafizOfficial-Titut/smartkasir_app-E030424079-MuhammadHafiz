@@ -31,6 +31,7 @@ final List<Produk> daftarProdukDummy = [
     harga: 18000,
     stok: 24, // Persediaan aman (> 5) -> Logika badge akan menampilkan warna hijau
     gambarUrl: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?w=300',
+    diskonPersen: 20, // Menambahkan diskon promo 20% khusus produk ini
   ),
   const Produk(
     id: 2,

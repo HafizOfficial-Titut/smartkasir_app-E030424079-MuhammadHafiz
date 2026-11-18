@@ -20,7 +20,7 @@ class SmartKasirApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF1E3A8A), // Biru Navy Profesional Bisnis
+          seedColor: Colors.teal, // Otomatis menghasilkan palet turunan selaras
           brightness: Brightness.light,
         ),
         appBarTheme: const AppBarTheme(

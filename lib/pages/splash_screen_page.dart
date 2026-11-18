@@ -17,7 +17,7 @@ class SplashScreenPage extends StatefulWidget {
 class _SplashScreenPageState extends State<SplashScreenPage> {
   // --- DEKLARASI VARIABEL STATE & TIMER ---
   // Deklarasi variabel durasi hitung mundur dalam satuan detik (Nilai awal: 5 detik)
-  int _durasiDetik = 5;
+  int _durasiDetik = 10; // Mengubah durasi hitung mundur menjadi 10 detik penuh
   // Deklarasi variabel objek timer asinkron (Nullable '?' karena belum dibuat saat kelas diinisialisasi)
   Timer? _timer;
 
@@ -142,7 +142,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
             const SizedBox(height: 14), // Jarak spasi 14 piksel
             // Komponen/Widget Text: Menampilkan status hitung mundur secara reaktif dari variabel _durasiDetik
             Text(
-              'Memuat data toko ($_durasiDetik detik)...', // Interpolasi string variabel _durasiDetik
+              'Menyiapkan sistem SmartKasir ($_durasiDetik detik)...',
               style: const TextStyle(
                 fontSize: 12,
                 color: Colors.white70,
